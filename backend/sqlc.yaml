@@ -1,0 +1,10 @@
+version: "2"
+sql:
+  - schema: "db/migration/001_init_schema.up.sql"
+    queries: "db/query/items.sql"
+    engine: "postgresql"
+    gen:
+      go:
+        package: "db"
+        out: "db" # Generates code into a 'db' folder
+        sql_package: "pgx/v5" # We are using the modern driver
